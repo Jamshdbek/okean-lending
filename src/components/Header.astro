@@ -1,0 +1,136 @@
+---
+
+---
+
+<header>
+  <nav>
+    <div class="logo">
+      <img src="../../public/favicon.svg" alt=" Logo" />
+      <span>Okean-UI</span>
+      <!-- 🌊 okean -->
+    </div>
+    <div class="nav-links">
+      <div class="dropdown">
+        <a href="#documentation">Documentation </a>
+      </div>
+      <div class="dropdown">
+        <a href="#cdk">CDK</a>
+      </div>
+      <div class="dropdown">
+        <a href="#guids">Guids</a>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <button style="border: none;">
+        <a href="https://www.npmjs.com/package/okean-ui" target="_blank" class="get-npm">
+          npm <span>📦</span>
+        </a>
+      </button>
+	  <button class="search-web">Search Component <span>⌕</span></button>
+    </div>
+  </nav>
+</header>
+<script></script>
+<style>
+  header {
+    padding: 0.75rem 2rem;
+    background: var(--background);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo img {
+    height: 32px;
+  }
+  .logo{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: 2rem;
+  }
+  .dropdown a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .dropdown span {
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+  .nav-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .get-npm {
+    background: var(--secondary);
+	color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+	text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .get-brave:hover {
+    background: var(--button-hover);
+  }
+  .search-web {
+    background: var(--background-light);
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .search-web:hover {
+    background: var(--background);
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 1024px) {
+    .nav-links {
+      display: none;
+    }
+  }
+  @media (max-width: 640px) {
+    .search-web {
+      display: none;
+    }
+    header {
+      padding: 0.75rem 1rem;
+    }
+  }
+</style>
