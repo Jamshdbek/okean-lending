@@ -1,11 +1,11 @@
 ---
-
+import LanguagePicker from "./LanguagePicker.astro";
 ---
 
 <header>
   <nav>
     <div class="logo">
-      <img src="../../public/favicon.svg" alt=" Logo" />
+      <img src="/public/favicon.svg" alt=" Logo" />
       <span>Okean-UI</span>
       <!-- 🌊 okean -->
     </div>
@@ -21,12 +21,17 @@
       </div>
     </div>
     <div class="nav-actions">
+      <LanguagePicker />
       <button style="border: none;">
-        <a href="https://www.npmjs.com/package/okean-ui" target="_blank" class="get-npm">
+        <a
+          href="https://www.npmjs.com/package/okean-ui"
+          target="_blank"
+          class="get-npm"
+        >
           npm <span>📦</span>
         </a>
       </button>
-	  <button class="search-web">Search Component <span>⌕</span></button>
+      <button class="search-web">Search Component <span>⌕</span></button>
     </div>
   </nav>
 </header>
@@ -51,11 +56,11 @@
   .logo img {
     height: 32px;
   }
-  .logo{
+  .logo {
     display: flex;
     align-items: center;
-    gap:10px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    gap: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   .nav-links {
     display: flex;
@@ -82,7 +87,7 @@
   }
   .get-npm {
     background: var(--secondary);
-	color: var(--text-primary);
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     color: white;
@@ -91,7 +96,7 @@
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.9375rem;
-	text-decoration: none;
+    text-decoration: none;
     cursor: pointer;
     transition: background 0.2s;
     display: flex;

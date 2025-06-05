@@ -1,49 +1,58 @@
 ---
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Okean UI" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
-
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Okean UI" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--primary: #1E2127;
-		--secondary: #FF321A;
-		--text-primary: #1E2127;
-		--text-secondary: #5A6072;
-		--background: #FFFFFF;
-		--background-light: #F8F9FA;
-		--button-hover: #E62D18;
-	}
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-	html {
-		font-family: 'Poppins', system-ui, sans-serif;
-		background: var(--background);
-		color: var(--text-primary);
-	}
-	body {
-		min-height: 100vh;
-	}
+  :root {
+    --primary: #1e2127;
+    --secondary: #ff321a;
+    --text-primary: #1e2127;
+    --text-secondary: #5a6072;
+    --background: #ffffff;
+    --background-light: #f8f9fa;
+    --button-hover: #e62d18;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Poppins", system-ui, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+  }
+  body {
+    min-height: 100vh;
+  }
 </style>

@@ -1,0 +1,36 @@
+---
+
+---
+
+<div class="nav-actions" id="languageSelect">
+  <select class="lang-select">
+    <option value="uz">🇺🇿 O'zbekcha</option>
+    <option value="en">🇺🇸 English</option>
+  </select>
+</div>
+<script>
+  const langSelect = document.getElementById("languageSelect");
+  langSelect?.addEventListener("change", async (event) => {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+    localStorage.setItem("lang", selectedValue);
+  });
+</script>
+<style>
+  .lang-select {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--background-light);
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    appearance: none;
+    transition: all 0.2s ease;
+  }
+
+  .lang-select:hover {
+    background: var(--background);
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+</style>

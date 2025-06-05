@@ -1,11 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+// let localLang = typeof window !== 'undefined' && localStorage.getItem('lang')
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout
-  title="Okean IU - React UI lab."
->
+<Layout title="Okean IU - React UI lab.">
   <Header />
 
   <main>
@@ -13,8 +16,7 @@ import Header from "../components/Header.astro";
       <div class="hero-content">
         <h1>Okean <span class="react-text">React</span> UI lablary</h1>
         <p>
-          Block ads. Save data. And get way faster webpages. Just by switching
-          your browser.
+         {t('home.info')}
         </p>
         <button class="button" onclick="onCopyMe()">
           <span style="font-family:monospace"> npm i okean-ui </span>
@@ -84,7 +86,7 @@ import Header from "../components/Header.astro";
     margin-top: 22px;
   }
   .hero {
-	padding-top: 70px;
+    padding-top: 70px;
     background: var(--background-light);
     padding: 6rem 2rem;
     position: relative;
@@ -274,7 +276,7 @@ import Header from "../components/Header.astro";
   .copy:hover .tooltip,
   .copy:focus:not(:focus-visible) .tooltip {
     opacity: 1;
-	z-index: 1000;
+    z-index: 1000;
     visibility: visible;
     top: calc((100% + var(--tooltip-offset)) * -1);
   }
