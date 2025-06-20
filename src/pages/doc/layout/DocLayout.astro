@@ -1,0 +1,57 @@
+---
+import Sidebar from "../components/Sidebar.astro";
+interface Props {
+  title: string;
+  description: string;
+  publishDate: string;
+  viewCount: number;
+}
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="doc_layout">
+      <Sidebar />
+      <main class="page_content">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+  .doc_layout {
+    display: flex;
+    min-height: 100vh;
+    font-family: "CustomMono", monospace;
+    background: var(--background-light, #fff);
+  }
+
+  .page_content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .doc_layout {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .page_content {
+      padding: 1rem;
+    }
+  }
+</style>

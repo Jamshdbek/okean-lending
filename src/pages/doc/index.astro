@@ -1,0 +1,21 @@
+---
+import DocLayout from "../doc/layout/DocLayout.astro";
+
+const props = {
+  title: "Welcome to Docs",
+  description: "Documentation for your awesome project",
+  publishDate: "2025-06-05",
+  viewCount: 9001,
+};
+---
+
+<DocLayout {...props}>
+  <section id="introduction">
+    <h1>Introduction</h1>
+    <p>Here's the overview of this legendary doc site...</p>
+  </section>
+  <section id="downloads">
+    <h1>Downloads</h1>
+    <p>Time to grab some files!</p>
+  </section>
+</DocLayout>

@@ -1,0 +1,44 @@
+---
+const links = ["Introduction", "Downloads", "Getting Started", "API Reference"];
+---
+
+<aside class="sidebar">
+  <nav>
+    <ul>
+      {links.map(link => (
+        <li><a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}>{link}</a></li>
+      ))}
+    </ul>
+  </nav>
+</aside>
+
+<style>
+  .sidebar {
+    min-width: 250px;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: "CustomMono", monospace;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar li {
+    margin-bottom: 1rem;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: var(--text-primary, #333);
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .sidebar a:hover {
+    color: #0070f3;
+  }
+</style>

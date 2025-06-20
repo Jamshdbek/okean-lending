@@ -1,6 +1,6 @@
-# Okean UI
+# Okean UI 🌊
 
-<p align="center">
+<p align="center" backgroundColor:'red';>
   <a href="https://okean.lamiun.uz" target="blank"><img src="https://okean.lamiun.uz/favicon.svg" width="120" alt="Logo" /></a>
 </p>
 
